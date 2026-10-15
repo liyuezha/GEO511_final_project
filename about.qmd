@@ -1,8 +1,9 @@
 ---
-title: "About"
+title: "Author"
 ---
 
-About this site
+Author Information:
+Liyuezha@buffalo.edu
 
 ```{r}
 1 + 1
