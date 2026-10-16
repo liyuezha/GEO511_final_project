@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Author",
+    "section": "",
+    "text": "Author Information: Liyuezha@buffalo.edu\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Final Project Template",
+    "section": "",
+    "text": "[~ 200 words]\nClearly stated background and questions / hypotheses / problems being addressed. Sets up the analysis in an interesting and compelling way. Include figures if you like."
+  },
+  {
+    "objectID": "index.html#download-and-clean-all-required-data",
+    "href": "index.html#download-and-clean-all-required-data",
+    "title": "My Final Project Template",
+    "section": "Download and clean all required data",
+    "text": "Download and clean all required data\n\nn=20\ndata=data.frame(x=runif(n,-180,180),\n                y=runif(n,-60,60),\n                size = runif(n, 5, 20),\n                category = factor(\n                  sample(letters[1:5], n, replace = TRUE)\n                  ),\n                value = rnorm(n))\n\ndata %&gt;% \n  slice(1:10) %&gt;% #show only 1:n rows\n  kable(digits=2,align=\"c\")%&gt;% #make table and round to two digits\n  kable_styling(bootstrap_options = \n                  c(\"striped\", \"hover\", \"condensed\", \"responsive\")) #apply other formatting\n\n\n\n\nx\ny\nsize\ncategory\nvalue\n\n\n\n\n17.26\n12.61\n10.67\nb\n0.46\n\n\n-118.75\n1.23\n9.82\nb\n0.40\n\n\n178.23\n-6.16\n14.97\nc\n-0.35\n\n\n-71.32\n21.87\n17.43\ne\n1.75\n\n\n-166.32\n53.47\n12.27\nc\n-1.18\n\n\n4.41\n-19.05\n13.71\nd\n-1.79\n\n\n-55.63\n19.89\n11.90\nd\n-1.46\n\n\n-2.12\n-45.08\n14.42\na\n-1.08\n\n\n110.77\n-36.47\n15.53\na\n0.61\n\n\n-163.06\n24.93\n13.89\ne\n0.89\n\n\n\n\nAdd any additional processing steps here."
+  },
+  {
+    "objectID": "data/Readme.html",
+    "href": "data/Readme.html",
+    "title": "Data Folder",
+    "section": "",
+    "text": "Data Folder\nPlace any data needed by your analysis in this folder. Please do not store large files here. Then read in any data using the ‘data’ path. For example, read_csv(\"data/data.csv\")."
+  }
+]
