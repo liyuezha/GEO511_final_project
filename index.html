@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your name here">
-<meta name="dcterms.date" content="2026-10-16">
+<meta name="author" content="Liyue Zhang">
+<meta name="dcterms.date" content="2001-10-20">
 
-<title>My Final Project Template – GEO511_FinalProject</title>
+<title>A Visualization for how different wind condition inputs affect wildfire simulations – GEO511_FinalProject</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -75,14 +75,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8d3ad9c781c51ccd60b292c95058b2c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,42 +111,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
-<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
-<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-<script src="site_libs/leaflet-binding-2.2.3/leaflet.js"></script>
-<link href="site_libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
-<script src="site_libs/dygraphs-1.1.1/dygraph-combined.js"></script>
-<script src="site_libs/dygraphs-1.1.1/shapes.js"></script>
-<script src="site_libs/moment-2.8.4/moment.js"></script>
-<script src="site_libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
-<script src="site_libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
-<script src="site_libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
 
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">GEO511_FinalProject</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -162,6 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -171,12 +153,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">My Final Project Template</h1>
-<p class="subtitle lead">Subtitle here if desired</p>
+<h1 class="title">A Visualization for how different wind condition inputs affect wildfire simulations</h1>
 </div>
 
 
@@ -186,14 +167,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your name here </p>
+             <p>Liyue Zhang </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 16, 2026</p>
+      <p class="date">October 20, 2001</p>
     </div>
   </div>
   
@@ -207,186 +188,143 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>[~ 200 words]</p>
-<p>Clearly stated background and questions / hypotheses / problems being addressed. Sets up the analysis in an interesting and compelling way. Include figures if you like.</p>
+<p>Wind is a key input in wildfire simulations, which influences both the direction and rate of fire spread. Maintain other inputs the same, different representation of wind can produce different simulated fire patterns. Visualizing these differences can help explain how sensitive a wildfire simulation is to its wind inputs.</p>
+<p>This project uses the 2018 Camp Fire in California as a case study. The fire began on November 8, 2018, in Butte County, and its documented progression provides a reference for comparing simulations (NIST, 2021). The analysis focuses on a question: How does simulated fire spread change under different wind-input scenarios?</p>
+<p>I compare three wind-input scenarios: a spatially uniform wind field based on average wind field from a single weather station, a High-Resolution Rapid Refresh (HRRR) wind field, and a fine wind field downscaled from HRRR. The analysis focuses on how closely the simulated burned area in each scenario matches the observed burned area of the 2018 Camp Fire in both size and location.</p>
+<p>I expect different wind inputs to produce differences in both the shape and size of the simulated burned area. This project maps where the scenarios differ and how those differences affect their agreement with the observed fire.</p>
 </section>
 <section id="materials-and-methods" class="level1">
 <h1>Materials and methods</h1>
-<p>[~ 200 words]</p>
-<p>Narrative: Clear narrative description of the data sources and methods. Includes data from at least two sources that were integrated / merged in R.</p>
-<p>Code: The code associated with the project is well organized and easy to follow. Demonstrates mastery of R graphics and functions.</p>
-<p>Data: The underlying data are publicly accessible via the web and downloaded/accessed within the Rmd script. If you want to use your own data, you must make it available on a website (e.g.&nbsp;Figshare) so that others are able to re-run your code.</p>
-<p>You can do bullets like this:</p>
-<ul>
-<li>The first most important thing</li>
-<li>The second most important thing</li>
-<li>The third most important thing</li>
-</ul>
-<p>You can do numbers like this:</p>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p><strong>Wind data.</strong> We used three types of wind data:</p>
 <ol type="1">
-<li>The first most important thing</li>
-<li>The second most important thing</li>
-<li>The third most important thing</li>
+<li><strong>Station observations.</strong> In situ wind measurements were recorded at the Jarbo Gap Remote Automated Weather Station (RAWS; station ID JBGC1). <a href="https://mesowest.utah.edu/cgi-bin/droman/meso_base_dyn.cgi?stn=JBGC1">MesoWest station data</a></li>
+<li><strong>HRRR model output.</strong> We used wind fields from NOAA’s High-Resolution Rapid Refresh (HRRR) model on a 3 km grid at 15-minute intervals. <a href="https://registry.opendata.aws/noaa-hrrr-pds/">NOAA HRRR data archive</a></li>
+<li><strong>Downscaled wind fields.</strong> We used a machine-learning model to generate wind fields on a 90 m grid.</li>
 </ol>
-<p>See <a href="http://rmarkdown.rstudio.com/" class="uri">http://rmarkdown.rstudio.com/</a> for all the amazing things you can do.</p>
-<p>Here’s my first code chunk.</p>
+<p><strong>Wildfire simulations.</strong> We used the Fire Area Simulator (FARSITE) to simulate wildfire spread. <a href="https://research.fs.usda.gov/treesearch/4617">USDA Forest Service FARSITE documentation</a></p>
+<p><strong>Satellite-derived reference perimeter.</strong> We delineated a reference fire perimeter from Landsat 8 Operational Land Imager (OLI) Band 7 (shortwave infrared 2, SWIR2) reflectance imagery and used it to evaluate the simulated fire spread. <a href="https://earthexplorer.usgs.gov/">USGS EarthExplorer</a></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Refer to output in your narrative like this: x=7 .</p>
-<p>Load any required packages in a code chunk (you may need to install some packages):</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmlwidgets)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(widgetframe)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">widgetframe_widgets_dir =</span> <span class="st">'widgets'</span> ) </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">cache=</span><span class="cn">TRUE</span>)  <span class="co"># cache the results for quick compiling</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_dir <span class="ot">&lt;-</span> <span class="st">"C:/Users/zhang/Box/Course/GEO 511/GEO511_final_project/data"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>wind_speed_unit <span class="ot">&lt;-</span> <span class="st">"m/s"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>hrrr_wind_dir <span class="ot">&lt;-</span> <span class="fu">file.path</span>(data_dir, <span class="st">"0_wind"</span>, <span class="st">"HRRR"</span>, <span class="st">"HRRR_subhourly_20181108"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>hrrr_fire_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(data_dir, <span class="st">"1_fire"</span>, <span class="st">"HRRR_driven"</span>, <span class="st">"hrrr_1045.shp"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>hrrr_wind_files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  hrrr_wind_dir, <span class="at">pattern =</span> <span class="st">"^[0-9]{8}_[0-9]{4}_PST_u10[.]tif$"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>wind_paths <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setNames</span>(<span class="fu">file.path</span>(hrrr_wind_dir, <span class="fu">paste0</span>(id, <span class="fu">c</span>(<span class="st">"_PST_u10.tif"</span>, <span class="st">"_PST_v10.tif"</span>))),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>           <span class="fu">c</span>(<span class="st">"u"</span>, <span class="st">"v"</span>))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>wind_ids <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">sub</span>(<span class="st">"_PST_u10[.]tif$"</span>, <span class="st">""</span>, hrrr_wind_files))</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>wind_ids <span class="ot">&lt;-</span> wind_ids[<span class="fu">vapply</span>(wind_ids, <span class="cf">function</span>(id) <span class="fu">all</span>(<span class="fu">file.exists</span>(<span class="fu">wind_paths</span>(id))),</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">logical</span>(<span class="dv">1</span>))]</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>hrrr_fire <span class="ot">&lt;-</span> <span class="fu">st_read</span>(hrrr_fire_path, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>wind_reference <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="fu">wind_paths</span>(wind_ids[<span class="dv">1</span>])[[<span class="st">"u"</span>]])</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>map_crs <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(<span class="fu">crs</span>(wind_reference))</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>wind_year <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">substr</span>(wind_ids, <span class="dv">1</span>, <span class="dv">4</span>))</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>fire_id <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"%s%02d%02d_%04d"</span>, wind_year, <span class="fu">as.integer</span>(hrrr_fire<span class="sc">$</span>Month),</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">as.integer</span>(hrrr_fire<span class="sc">$</span>Day), <span class="fu">as.integer</span>(hrrr_fire<span class="sc">$</span>Hour))</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>matched_times <span class="ot">&lt;-</span> <span class="fu">intersect</span>(wind_ids, fire_id)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="download-and-clean-all-required-data" class="level2">
-<h2 class="anchored" data-anchor-id="download-and-clean-all-required-data">Download and clean all required data</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">20</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">180</span>,<span class="dv">180</span>),</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">y=</span><span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">60</span>,<span class="dv">60</span>),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">size =</span> <span class="fu">runif</span>(n, <span class="dv">5</span>, <span class="dv">20</span>),</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">category =</span> <span class="fu">factor</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">sample</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>], n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                  ),</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">value =</span> <span class="fu">rnorm</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="co">#show only 1:n rows</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits=</span><span class="dv">2</span>,<span class="at">align=</span><span class="st">"c"</span>)<span class="sc">%&gt;%</span> <span class="co">#make table and round to two digits</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>)) <span class="co">#apply other formatting</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="table-responsive">
-<table class="table table-striped table-hover table-condensed caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: center;" data-quarto-table-cell-role="th">x</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">y</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">size</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">category</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">17.26</td>
-<td style="text-align: center;">12.61</td>
-<td style="text-align: center;">10.67</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">0.46</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">-118.75</td>
-<td style="text-align: center;">1.23</td>
-<td style="text-align: center;">9.82</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">0.40</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">178.23</td>
-<td style="text-align: center;">-6.16</td>
-<td style="text-align: center;">14.97</td>
-<td style="text-align: center;">c</td>
-<td style="text-align: center;">-0.35</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">-71.32</td>
-<td style="text-align: center;">21.87</td>
-<td style="text-align: center;">17.43</td>
-<td style="text-align: center;">e</td>
-<td style="text-align: center;">1.75</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">-166.32</td>
-<td style="text-align: center;">53.47</td>
-<td style="text-align: center;">12.27</td>
-<td style="text-align: center;">c</td>
-<td style="text-align: center;">-1.18</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4.41</td>
-<td style="text-align: center;">-19.05</td>
-<td style="text-align: center;">13.71</td>
-<td style="text-align: center;">d</td>
-<td style="text-align: center;">-1.79</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">-55.63</td>
-<td style="text-align: center;">19.89</td>
-<td style="text-align: center;">11.90</td>
-<td style="text-align: center;">d</td>
-<td style="text-align: center;">-1.46</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">-2.12</td>
-<td style="text-align: center;">-45.08</td>
-<td style="text-align: center;">14.42</td>
-<td style="text-align: center;">a</td>
-<td style="text-align: center;">-1.08</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">110.77</td>
-<td style="text-align: center;">-36.47</td>
-<td style="text-align: center;">15.53</td>
-<td style="text-align: center;">a</td>
-<td style="text-align: center;">0.61</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">-163.06</td>
-<td style="text-align: center;">24.93</td>
-<td style="text-align: center;">13.89</td>
-<td style="text-align: center;">e</td>
-<td style="text-align: center;">0.89</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Add any additional processing steps here.</p>
 </section>
-</section>
-<section id="results" class="level1">
-<h1>Results</h1>
-<p>[~200 words]</p>
-<p>Tables and figures (maps and other graphics) are carefully planned to convey the results of your analysis. Intense exploration and evidence of many trials and failures. The author looked at the data in many different ways before coming to the final presentation of the data.</p>
-<p>Show tables, plots, etc. and describe them.</p>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">leaflet</span>(data) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(<span class="sc">~</span>x, <span class="sc">~</span>y, <span class="at">radius =</span> <span class="sc">~</span>size,<span class="at">color =</span> <span class="sc">~</span><span class="fu">as.factor</span>(category)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPopups</span>(<span class="sc">~</span>x[<span class="dv">2</span>], <span class="sc">~</span>y[<span class="dv">2</span>], <span class="st">"Random popup"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>m  <span class="co"># a map with the default OSM tile layer</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plot_wind_fire <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">times =</span> <span class="fu">c</span>(<span class="st">"20181108_0630"</span>, <span class="st">"20181108_0830"</span>, <span class="st">"20181108_1045"</span>),</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">arrow_every =</span> <span class="dv">1</span>L, <span class="at">padding_m =</span> <span class="dv">3500</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">draw_arrows =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  times <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">unique</span>(times))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stopifnot</span>(<span class="fu">length</span>(arrow_every) <span class="sc">==</span> <span class="dv">1</span>L, <span class="fu">is.finite</span>(arrow_every), arrow_every <span class="sc">&gt;=</span> <span class="dv">1</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            arrow_every <span class="sc">==</span> <span class="fu">as.integer</span>(arrow_every), padding_m <span class="sc">&gt;=</span> <span class="dv">0</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  labels <span class="ot">&lt;-</span> <span class="fu">setNames</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste0</span>(<span class="fu">substr</span>(times, <span class="dv">10</span>, <span class="dv">11</span>), <span class="st">":"</span>, <span class="fu">substr</span>(times, <span class="dv">12</span>, <span class="dv">13</span>), <span class="st">" PST"</span>), times</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  keep <span class="ot">&lt;-</span> fire_id <span class="sc">%in%</span> times</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Retain geometry only; all features at the requested time are displayed.</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  outlines <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel =</span> <span class="fu">factor</span>(<span class="fu">unname</span>(labels[fire_id[keep]]), <span class="at">levels =</span> <span class="fu">unname</span>(labels)),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">geometry =</span> <span class="fu">st_geometry</span>(hrrr_fire)[keep]</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  outlines <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(outlines, map_crs)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  box <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(outlines)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  latitude <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(box[[<span class="st">"ymin"</span>]], box[[<span class="st">"ymax"</span>]]))</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  longitude_scale <span class="ot">&lt;-</span> <span class="fu">cos</span>(latitude <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  pad_y <span class="ot">&lt;-</span> padding_m <span class="sc">/</span> <span class="dv">111320</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  pad_x <span class="ot">&lt;-</span> pad_y <span class="sc">/</span> longitude_scale</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  view <span class="ot">&lt;-</span> <span class="fu">ext</span>(box[[<span class="st">"xmin"</span>]] <span class="sc">-</span> pad_x, box[[<span class="st">"xmax"</span>]] <span class="sc">+</span> pad_x,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>              box[[<span class="st">"ymin"</span>]] <span class="sc">-</span> pad_y, box[[<span class="st">"ymax"</span>]] <span class="sc">+</span> pad_y)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  frames <span class="ot">&lt;-</span> <span class="fu">lapply</span>(times, <span class="cf">function</span>(id) {</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    layers <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">wind_paths</span>(id), rast)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    wind <span class="ot">&lt;-</span> <span class="fu">crop</span>(<span class="fu">do.call</span>(c, <span class="fu">unname</span>(layers)), view)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">names</span>(wind) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"u"</span>, <span class="st">"v"</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(wind, <span class="at">xy =</span> <span class="cn">TRUE</span>, <span class="at">cells =</span> <span class="cn">TRUE</span>, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    df<span class="sc">$</span>speed <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(df<span class="sc">$</span>u<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> df<span class="sc">$</span>v<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    df<span class="sc">$</span>panel <span class="ot">&lt;-</span> <span class="fu">factor</span>(labels[[id]], <span class="at">levels =</span> <span class="fu">unname</span>(labels))</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    rc <span class="ot">&lt;-</span> <span class="fu">rowColFromCell</span>(wind, df<span class="sc">$</span>cell)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    arrows <span class="ot">&lt;-</span> df[rc[, <span class="dv">1</span>] <span class="sc">%%</span> arrow_every <span class="sc">==</span> <span class="dv">1</span>L <span class="sc">%%</span> arrow_every <span class="sc">&amp;</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>                 rc[, <span class="dv">2</span>] <span class="sc">%%</span> arrow_every <span class="sc">==</span> <span class="dv">1</span>L <span class="sc">%%</span> arrow_every <span class="sc">&amp;</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">is.finite</span>(df<span class="sc">$</span>u) <span class="sc">&amp;</span> <span class="fu">is.finite</span>(df<span class="sc">$</span>v), ]</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    magnitude <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(arrows<span class="sc">$</span>u<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> arrows<span class="sc">$</span>v<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    arrows <span class="ot">&lt;-</span> arrows[magnitude <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    magnitude <span class="ot">&lt;-</span> magnitude[magnitude <span class="sc">&gt;</span> <span class="dv">0</span>]</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    arrow_length <span class="ot">&lt;-</span> <span class="fl">0.65</span> <span class="sc">*</span> arrow_every <span class="sc">*</span> <span class="fu">min</span>(<span class="fu">res</span>(wind) <span class="sc">*</span> <span class="fu">c</span>(longitude_scale, <span class="dv">1</span>))</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert the eastward component to a longitude displacement.</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Arrow length is fixed. Colour conveys the wind speed.</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    arrows<span class="sc">$</span>xend <span class="ot">&lt;-</span> arrows<span class="sc">$</span>x <span class="sc">+</span> arrow_length <span class="sc">*</span> arrows<span class="sc">$</span>u <span class="sc">/</span> (magnitude <span class="sc">*</span> longitude_scale)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    arrows<span class="sc">$</span>yend <span class="ot">&lt;-</span> arrows<span class="sc">$</span>y <span class="sc">+</span> arrow_length <span class="sc">*</span> arrows<span class="sc">$</span>v <span class="sc">/</span> magnitude</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">speed =</span> df[<span class="fu">is.finite</span>(df<span class="sc">$</span>speed), <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"speed"</span>, <span class="st">"panel"</span>)],</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>         <span class="at">arrows =</span> arrows)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  speed <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, <span class="fu">lapply</span>(frames, <span class="st">`</span><span class="at">[[</span><span class="st">`</span>, <span class="st">"speed"</span>))</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  arrows <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, <span class="fu">lapply</span>(frames, <span class="st">`</span><span class="at">[[</span><span class="st">`</span>, <span class="st">"arrows"</span>))</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>  legend <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="fu">is.null</span>(wind_speed_unit)) <span class="st">"Wind speed"</span> <span class="cf">else</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste0</span>(<span class="st">"Wind speed ("</span>, wind_speed_unit, <span class="st">")"</span>)</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>  map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_raster</span>(<span class="at">data =</span> speed, <span class="fu">aes</span>(x, y, <span class="at">fill =</span> speed)) <span class="sc">+</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> legend, <span class="at">option =</span> <span class="st">"C"</span>)</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (draw_arrows) {</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>    map <span class="ot">&lt;-</span> map <span class="sc">+</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_segment</span>(<span class="at">data =</span> arrows, <span class="fu">aes</span>(x, y, <span class="at">xend =</span> xend, <span class="at">yend =</span> yend),</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>                   <span class="at">colour =</span> <span class="st">"#F7F7F7"</span>, <span class="at">linewidth =</span> <span class="fl">0.28</span>,</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>                   <span class="at">arrow =</span> grid<span class="sc">::</span><span class="fu">arrow</span>(<span class="at">length =</span> grid<span class="sc">::</span><span class="fu">unit</span>(<span class="fl">1.4</span>, <span class="st">"mm"</span>), <span class="at">type =</span> <span class="st">"closed"</span>))</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>  map <span class="sc">+</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> outlines, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">colour =</span> <span class="st">"#FF5638"</span>, <span class="at">linewidth =</span> <span class="fl">0.32</span>) <span class="sc">+</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(panel), <span class="at">ncol =</span> <span class="fu">min</span>(<span class="dv">3</span>L, <span class="fu">length</span>(times))) <span class="sc">+</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">crs =</span> map_crs, <span class="at">datum =</span> map_crs, <span class="at">expand =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>             <span class="at">xlim =</span> <span class="fu">c</span>(<span class="fu">xmin</span>(view), <span class="fu">xmax</span>(view)), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fu">ymin</span>(view), <span class="fu">ymax</span>(view))) <span class="sc">+</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"HRRR wind and simulated fire perimeters"</span>,</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"Red outlines show simulated perimeters."</span>,</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>                          <span class="cf">if</span> (draw_arrows) <span class="st">"Arrows show flow direction."</span> <span class="cf">else</span> <span class="st">""</span>),</span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>) <span class="sc">+</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>(), <span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_wind_fire</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-937096e9113048216829" style="width:100%;height:325px;"></div>
-<script type="application/json" data-for="htmlwidget-937096e9113048216829">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[12.60894608683884,1.229779617860913,-6.158920610323548,21.86630903743207,53.47394314594567,-19.0458435472101,19.89401651546359,-45.07862417958677,-36.46712983958423,24.9316446762532,-29.32283707894385,-5.14570995233953,3.885679459199309,-53.61064863391221,51.98427837342024,36.55671293847263,10.9723063185811,16.62548244930804,-30.59750790707767,36.37220000848174],[17.25636393763125,-118.7516340985894,178.2254657708108,-71.31987844593823,-166.3167900033295,4.413848184049129,-55.62746205367148,-2.124795187264681,110.7713903021067,-163.0584025941789,-84.90536894649267,-9.996570870280266,-117.3802187014371,-140.3995393775403,35.19030525349081,-111.5181379951537,-143.1559211108834,93.14592121168971,148.0590001959354,-18.20442985743284],[10.66639299504459,9.82135800877586,14.9746364809107,17.42700801463798,12.26730367168784,13.70858287089504,11.89825126901269,14.41594281001016,15.52859140792862,13.89344203635119,5.14820070238784,15.92478846083395,7.340932685183361,6.60131165292114,18.48062640288845,16.74747966811992,11.10560925444588,7.770197414793074,10.75809016358107,12.51992667559534],null,null,{"interactive":true,"className":"","stroke":true,"color":["b","b","c","e","c","d","d","a","a","e","c","d","e","b","d","d","b","a","a","a"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["b","b","c","e","c","d","d","a","a","e","c","d","e","b","d","d","b","a","a","a"],"fillOpacity":0.2},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPopups","args":[1.229779617860913,-118.7516340985894,"Random popup",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"limits":{"lat":[-53.61064863391221,53.47394314594567],"lng":[-166.3167900033295,178.2254657708108]}},"evals":[],"jsHooks":[]}</script>
-<p>Map of completely random data</p>
-</div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y,<span class="at">col=</span>category))<span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="864"></p>
+<figcaption>Downscaled wind fields and FARSITE-simulated fire perimeters on November 8, 2018.</figcaption>
 </figure>
 </div>
-</div>
-</div>
-<section id="dygraphs-example" class="level3">
-<h3 class="anchored" data-anchor-id="dygraphs-example">Dygraphs Example</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dygraphs)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dygraph</span>(nhtemp, <span class="at">main =</span> <span class="st">"New Haven Temperatures"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dyRangeSelector</span>(<span class="at">dateWindow =</span> <span class="fu">c</span>(<span class="st">"1920-01-01"</span>, <span class="st">"1960-01-01"</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div class="dygraphs html-widget html-fill-item" id="htmlwidget-f4c92ad84264705d8435" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-f4c92ad84264705d8435">{"x":{"attrs":{"title":"New Haven Temperatures","labels":["year","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"dateWindow":["1920-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"yearly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1912-01-01T00:00:00.000Z","1913-01-01T00:00:00.000Z","1914-01-01T00:00:00.000Z","1915-01-01T00:00:00.000Z","1916-01-01T00:00:00.000Z","1917-01-01T00:00:00.000Z","1918-01-01T00:00:00.000Z","1919-01-01T00:00:00.000Z","1920-01-01T00:00:00.000Z","1921-01-01T00:00:00.000Z","1922-01-01T00:00:00.000Z","1923-01-01T00:00:00.000Z","1924-01-01T00:00:00.000Z","1925-01-01T00:00:00.000Z","1926-01-01T00:00:00.000Z","1927-01-01T00:00:00.000Z","1928-01-01T00:00:00.000Z","1929-01-01T00:00:00.000Z","1930-01-01T00:00:00.000Z","1931-01-01T00:00:00.000Z","1932-01-01T00:00:00.000Z","1933-01-01T00:00:00.000Z","1934-01-01T00:00:00.000Z","1935-01-01T00:00:00.000Z","1936-01-01T00:00:00.000Z","1937-01-01T00:00:00.000Z","1938-01-01T00:00:00.000Z","1939-01-01T00:00:00.000Z","1940-01-01T00:00:00.000Z","1941-01-01T00:00:00.000Z","1942-01-01T00:00:00.000Z","1943-01-01T00:00:00.000Z","1944-01-01T00:00:00.000Z","1945-01-01T00:00:00.000Z","1946-01-01T00:00:00.000Z","1947-01-01T00:00:00.000Z","1948-01-01T00:00:00.000Z","1949-01-01T00:00:00.000Z","1950-01-01T00:00:00.000Z","1951-01-01T00:00:00.000Z","1952-01-01T00:00:00.000Z","1953-01-01T00:00:00.000Z","1954-01-01T00:00:00.000Z","1955-01-01T00:00:00.000Z","1956-01-01T00:00:00.000Z","1957-01-01T00:00:00.000Z","1958-01-01T00:00:00.000Z","1959-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z","1961-01-01T00:00:00.000Z","1962-01-01T00:00:00.000Z","1963-01-01T00:00:00.000Z","1964-01-01T00:00:00.000Z","1965-01-01T00:00:00.000Z","1966-01-01T00:00:00.000Z","1967-01-01T00:00:00.000Z","1968-01-01T00:00:00.000Z","1969-01-01T00:00:00.000Z","1970-01-01T00:00:00.000Z","1971-01-01T00:00:00.000Z"],[49.9,52.3,49.4,51.1,49.4,47.9,49.8,50.9,49.3,51.9,50.8,49.6,49.3,50.6,48.4,50.7,50.9,50.6,51.5,52.8,51.8,51.1,49.8,50.2,50.4,51.6,51.8,50.9,48.8,51.7,51,50.6,51.7,51.5,52.1,51.3,51,54,51.4,52.7,53.1,54.6,52,52,50.9,52.6,50.2,52.6,51.6,51.9,50.5,50.9,51.7,51.4,51.7,50.8,51.9,51.8,51.9,53]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -482,7 +420,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -491,8 +430,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -506,6 +506,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -668,44 +669,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -803,6 +814,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 
