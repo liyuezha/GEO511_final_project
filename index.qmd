@@ -145,8 +145,7 @@ plot_wind_fire <- function(times = c("20181108_0630", "20181108_0830", "20181108
 }
 plot_wind_fire()
 ```
-
-
+>Wow. There is a lot of work clearly put into this project, and it definitely paid off. I am surprised to see a numerical simulation model here, but it looks great. I think I would have liked to see the set up for the machine learning model, since the code provided here is mainly intended to plot the result. Now that the HRRR has been discontinued, I wonder how the replacement models be utilized in simulated wind. There are a lot of functions and syntax here that I definitely do not understand, but I think I understand what is going on with the code. Some elaboration would be nice for some code chunks to explain what the code is doing, but otherwise this is very well done.
 # Conclusions
 
 \[\~200 words\]
